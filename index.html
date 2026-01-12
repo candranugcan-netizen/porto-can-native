@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Candra Nugroho</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="portfolio-modal" onclick="closeModal(event)">
+        <div class="modal-content p-8 md:p-12" onclick="event.stopPropagation()">
+            <button onclick="closeModal(null)" class="absolute top-6 right-6 text-gray-400 hover:text-red-600 font-black">CLOSE [X]</button>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <div id="login-screen">
+        <div class="login-card">
+            <div class="hud-line"></div>
+            <h2 class="text-2xl font-black tracking-tighter mb-1 text-[#1B264F]">MASUK KE PORTOFOLIO</h2>
+            <br>
+            
+            <div class="space-y-4">
+                <input type="text" id="username" class="w-full p-4 bg-white/50 border-2 border-gray-100 rounded-xl outline-none focus:border-[#1B264F] transition text-sm font-bold" placeholder="Username (isi apa aja)">
+                <input type="password" id="password" class="w-full p-4 bg-white/50 border-2 border-gray-100 rounded-xl outline-none focus:border-[#1B264F] transition text-sm font-bold" placeholder="Password (isi apa aja)">
+                <p id="error-msg" class="text-red-600 text-[10px] font-black hidden uppercase tracking-tighter bg-red-50 p-2 rounded text-center">Harap isi kolom akses.</p>
+                <button onclick="checkLogin()" class="w-full bg-[#CE2029] text-white p-4 rounded-xl font-black text-xs tracking-[0.3em] hover:bg-[#1B264F] transition-all shadow-lg">Masuk</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="parallax-container" id="master-container">
+        <section>
+            <div class="parallax-layer" data-speed="0.5">PORTOFOLIO</div>
+            <div class="content-box text-center lg:text-left">
+                <p class="text-[#CE2029] font-bold text-[10px] tracking-[0.5em] mb-2 uppercase">Portofolio</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-4 leading-tight">CANDRA NUGROHO</h1>
+                <p class="text-gray-500 max-w-md mx-auto lg:mx-0 text-sm md:text-base mb-6">Pengembang Sistem Informasi & Visual Layout industrial.</p>
+                <button onclick="openPortfolio('general')" class="text-[10px] font-black border-b-2 border-[#CE2029] pb-1 uppercase tracking-widest hover:text-[#CE2029] transition">Browse Archive</button>
+            </div>
+        </section>
+
+        <section class="bg-white">
+            <div class="parallax-layer" data-speed="0.2">SYSTEM</div>
+            <div class="content-box grid lg:grid-cols-2 gap-10 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="hud-line mx-auto lg:mx-0"></div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Information System</h2>
+                    <p class="text-gray-500 mb-6">Membangun arsitektur data dashboard yang efisien. Latar belakang pendidikan di Fakultas Sains dan Teknologi - Sistem Informasi.</p>
+                    <button onclick="openPortfolio('system')" class="text-[10px] font-black border-b-2 border-[#CE2029] pb-1 uppercase tracking-widest hover:text-[#CE2029] transition">Project Details</button>
+                </div>
+                <div class="order-1 lg:order-2 h-48 md:h-80 bg-[#1B264F] rounded-2xl flex items-center justify-center text-white/5 font-black italic">Klik Project Details</div>
+            </div>
+        </section>
+
+        <section class="bg-[#1B264F] text-white">
+            <div class="parallax-layer" data-speed="0.4" style="color: white; opacity: 0.05;">LAYOUT</div>
+            <div class="content-box grid lg:grid-cols-2 gap-10 items-center">
+                <div class="h-64 md:h-80 bg-white/5 rounded-3xl border border-white/10 flex items-center justify-center order-1">
+                    <div class="text-[#F9C80E] font-black text-xl opacity-20 italic">Klik VIew Gallery</div>
+                </div>
+                <div class="order-2">
+                    <div class="hud-line mx-auto lg:mx-0"></div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Package Layouter</h2>
+                    <p class="text-blue-100/60 mb-6">Spesialisasi layout kemasan industrial. Berpengalaman 4 tahun di perusahaan multinasional.</p>
+                    <button onclick="openPortfolio('design')" class="text-[10px] font-black border-b-2 border-white pb-1 uppercase tracking-widest hover:text-[#F9C80E] transition">View Gallery</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="parallax-layer" data-speed="0.1">STORY</div>
+            <div class="content-box max-w-2xl mx-auto text-center lg:text-left">
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border-l-8 border-[#F9C80E]">
+                    <h2 class="text-2xl md:text-4xl font-extrabold mb-6 italic text-[#1B264F]">Short Story Writer</h2>
+                    <p class="text-gray-600 mb-6 italic">"Blogger sejak tahun 2009. Beberapa karya telah dibukukan."</p>
+                    <button onclick="openPortfolio('story')" class="text-[10px] font-black border-b-2 border-[#CE2029] pb-1 uppercase tracking-widest hover:text-[#CE2029] transition">Read More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="nav-dots" id="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

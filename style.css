@@ -1,0 +1,145 @@
+:root {
+    --g-white: #F5F5F5;
+    --g-navy: #1B264F;
+    --g-red: #CE2029;
+    --g-yellow: #F9C80E;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    background-color: var(--g-white);
+    color: var(--g-navy);
+    overflow: hidden; 
+}
+
+/* Responsive Behavior */
+@media (max-width: 1023px) {
+    body { overflow-y: auto; overflow-x: hidden; }
+}
+
+/* --- LOGIN SCREEN --- */
+#login-screen {
+    position: fixed;
+    inset: 0;
+    background-color: var(--g-white);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1023px) {
+    #login-screen {
+        /* Background mobile menarik menggunakan image Gundam */
+        background-image: linear-gradient(to bottom, rgba(27, 38, 79, 0.7), rgba(27, 38, 79, 0.9)), url('image_f938e7.jpg');
+    }
+    .login-card {
+        background: rgba(255, 255, 255, 0.9) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+.login-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 380px;
+    border-bottom: 5px solid var(--g-red);
+    border-right: 5px solid var(--g-navy);
+}
+
+/* --- PORTFOLIO MODAL --- */
+#portfolio-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(27, 38, 79, 0.9);
+    backdrop-filter: blur(15px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    max-height: 80vh;
+    border-radius: 2rem;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    border-top: 8px solid var(--g-red);
+}
+
+/* --- MAIN LAYOUT --- */
+.parallax-container {
+    display: flex;
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+@media (min-width: 1024px) {
+    .parallax-container { width: 400vw; height: 100vh; will-change: transform; }
+    section { width: 100vw; height: 100vh; flex-shrink: 0; }
+}
+
+@media (max-width: 1023px) {
+    .parallax-container { flex-direction: column; width: 100%; height: auto; }
+    section { width: 100%; min-height: 100vh; padding: 80px 24px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .parallax-layer { display: none; }
+}
+
+section { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+
+.parallax-layer {
+    position: absolute;
+    font-size: 20vw;
+    font-weight: 800;
+    color: var(--g-navy);
+    opacity: 0.04;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hud-line {
+    height: 2px;
+    background: linear-gradient(90deg, var(--g-red) 30%, var(--g-yellow) 30% 60%, var(--g-navy) 60%);
+    width: 60px;
+    margin-bottom: 1.5rem;
+}
+
+.content-box { z-index: 10; position: relative; width: 100%; max-width: 1100px; }
+
+/* Navigation dots */
+.nav-dots {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 50;
+}
+@media (max-width: 1023px) { .nav-dots { display: none; } }
+
+.dot {
+    width: 8px; height: 8px;
+    background: rgba(27, 38, 79, 0.2);
+    border-radius: 2px;
+    transition: all 0.3s;
+    transform: rotate(45deg);
+}
+.dot.active { background: var(--g-red); width: 20px; transform: rotate(0deg); }
