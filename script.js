@@ -79,7 +79,7 @@ const portfolioData = {
             <div class="p-4 border-l-4 border-yellow-400 bg-gray-50 italic">"Lintah" - 2020</div>
         </div>
     `,
-    general: `<h3 class="text-2xl font-black">Information Systems Developer, Industial Product Layouter, Short Story Teller</h3>`
+    general: `<h3 class="text-2xl font-black">Information System Developer, Industrial Product Layouter, Short Story Teller</h3>`
 };
 
 // --- FUNCTIONS ---
@@ -154,3 +154,4 @@ window.addEventListener('resize', () => {
     }
 
 });
+
