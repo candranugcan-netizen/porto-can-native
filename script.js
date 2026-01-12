@@ -30,7 +30,6 @@ const portfolioData = {
             <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center font-bold"><img src="assets/1.png"></a></div>
             <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center 
             font-bold"><img src="assets/2.png"></div>
-            <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center font-bold"><img src="assets/3.png"></div>
             <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center font-bold"><img src="assets/4.png"></div>
         </div>
         <p class="mt-4 text-gray-600">HTML, CSS, Javascript, PHP, MySQL, Vue, Laravel, React</p>
@@ -154,4 +153,5 @@ window.addEventListener('resize', () => {
     }
 
 });
+
 
