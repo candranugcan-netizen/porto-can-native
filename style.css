@@ -43,6 +43,9 @@ body {
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
+    .modal-content button {
+        display: none;
+    }
 }
 
 .login-card {
@@ -142,4 +145,5 @@ section { display: flex; align-items: center; justify-content: center; position:
     transition: all 0.3s;
     transform: rotate(45deg);
 }
+
 .dot.active { background: var(--g-red); width: 20px; transform: rotate(0deg); }
