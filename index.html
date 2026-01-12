@@ -41,7 +41,7 @@
                 <p class="text-[#CE2029] font-bold text-[10px] tracking-[0.5em] mb-2 uppercase">Portofolio</p>
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-4 leading-tight">CANDRA NUGROHO</h1>
                 <p class="text-gray-500 max-w-md mx-auto lg:mx-0 text-sm md:text-base mb-6">Pengembang Sistem Informasi & Visual Layout industrial.</p>
-                <button onclick="openPortfolio('general')" class="text-[10px] font-black border-b-2 border-[#CE2029] pb-1 uppercase tracking-widest hover:text-[#CE2029] transition">About me</button>
+                <button onclick="openPortfolio('general')" class="text-[10px] font-black border-b-2 border-[#CE2029] pb-1 uppercase tracking-widest hover:text-[#CE2029] transition">Browse Archive</button>
             </div>
         </section>
 
@@ -54,7 +54,7 @@
                     <p class="text-gray-500 mb-6">Membangun arsitektur data dashboard yang efisien. Latar belakang pendidikan di Fakultas Sains dan Teknologi - Sistem Informasi.</p>
                     <button onclick="openPortfolio('system')" class="text-[10px] font-black border-b-2 border-[#CE2029] pb-1 uppercase tracking-widest hover:text-[#CE2029] transition">Project Details</button>
                 </div>
-                <div class="order-1 lg:order-2 h-48 md:h-80 bg-[#1B264F] rounded-2xl flex items-center justify-center text-white/5 font-black italic">Klik Project Details</div>
+                <div onclick="openPortfolio('system')" class="order-1 lg:order-2 h-48 md:h-80 bg-[#1B264F] rounded-2xl flex items-center justify-center text-white/5 font-black italic">Click for more details</div>
             </div>
         </section>
 
@@ -62,7 +62,7 @@
             <div class="parallax-layer" data-speed="0.4" style="color: white; opacity: 0.05;">LAYOUT</div>
             <div class="content-box grid lg:grid-cols-2 gap-10 items-center">
                 <div class="h-64 md:h-80 bg-white/5 rounded-3xl border border-white/10 flex items-center justify-center order-1">
-                    <div class="text-[#F9C80E] font-black text-xl opacity-20 italic">Klik VIew Gallery</div>
+                    <div onclick="openPortfolio('design')" class="text-[#F9C80E] font-black text-xl opacity-20 italic">Click for more details</div>
                 </div>
                 <div class="order-2">
                     <div class="hud-line mx-auto lg:mx-0"></div>
@@ -94,6 +94,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
